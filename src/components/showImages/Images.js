@@ -4,8 +4,8 @@ import './Images.css'
 
 const Images = () => {
     const [imageId, setImageId] = useState([]);
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [postPerPage] = useState(10);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(12);
     const [control, setControl] = useState(true);
 
     useEffect(() => {
@@ -19,18 +19,26 @@ const Images = () => {
             })
     }, []);
 
-    imageId.map(elem => {
-        console.log('element', elem?.idList);
+
+    //Get current post
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+
+    let currentPost = [];
+    imageId?.map(e => {
+        currentPost.push(e?.idList.slice(indexOfFirstPost, indexOfLastPost));
     })
 
-    // //Get current post
-    // const indexOfLastPost = currentPage * postPerPage;
-    // const indexOfFirstPost = indexOfLastPost - postPerPage;
-    // const currentPost = imageId.slice(indexOfFirstPost, indexOfLastPost);
 
-    // const paginate = pageNumber => {
-    //     setCurrentPage(pageNumber);
-    // }
+    const paginate = pageNumber => {
+        setCurrentPage(pageNumber)
+    };
+
+    let totalPost;
+    imageId?.map(e => {
+        totalPost = e?.idList?.length
+    })
+
     return (
         <div>
 
@@ -38,13 +46,19 @@ const Images = () => {
                 <div class="row gy-2">
 
                     {control === true ? (
-                        imageId?.map(objectId => (
-                            objectId?.idList?.map(imgId => (
-                                <div className='col-md-3 col-4' key={imgId}>
-                                    <img className='img-thumbnail img-fluid' src={`https://drive.google.com/uc?id=${imgId}`} alt="" />
-                                    <figcaption style={{ 'fontSize': '10px' }}>{objectId?.driveName}</figcaption>
-                                </div>
-                            ))
+                        // imageId?.map(objectId => (
+                        //     objectId?.idList?.map(imgId => (
+                        //         <div className='col-md-3 col-4' key={imgId}>
+                        //             <img className='img-thumbnail img-fluid' src={`https://drive.google.com/uc?id=${imgId}`} alt="" />
+                        //             <figcaption style={{ 'fontSize': '10px' }}>{objectId?.driveName}</figcaption>
+                        //         </div>
+                        //     ))
+                        // ))
+                        currentPost[0]?.map(id => (
+                            <div className='col-md-3 col-4' key={id}>
+                                <img className='img-thumbnail img-fluid' src={`https://drive.google.com/uc?id=${id}`} alt="" />
+                                <figcaption style={{ 'fontSize': '10px' }}>{imageId?.map(e => e?.driveName)}</figcaption>
+                            </div>
                         ))
                     ) : (
 
@@ -57,7 +71,7 @@ const Images = () => {
                     }
 
                 </div>
-                {/* <Pagination psotPerPage={postPerPage} totalPost={imageId?.length} paginate={paginate}></Pagination> */}
+                <Pagination postsPerPage={postPerPage} totalPosts={totalPost} paginate={paginate}></Pagination>
             </div>
 
         </div>
