@@ -4,8 +4,6 @@ import DataEntry from './components/DataEntry/DataEntry';
 import Home from './components/Home/Home';
 import ImageFolder from './components/ImageFolder/ImageFolder';
 import Navbar from './components/navbar/Navbar';
-import PaginatedItems from './components/paginatedItems/PaginatedItems';
-import Images from './components/showImages/Images';
 
 function App() {
   return (
@@ -16,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='home' element={<Home />} />
-          <Route path='all-images' element={<Images />} />
+          <Route path='all-images' element={<Home />} />
           <Route path='image-folder/:id' element={<ImageFolder />} />
           <Route path='data-entry' element={<DataEntry />} />
         </Routes>

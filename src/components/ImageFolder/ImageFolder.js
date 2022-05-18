@@ -30,7 +30,7 @@ const ImageFolder = () => {
     const [itemOffset, setItemOffset] = useState(0);
 
 
-    const itemsPerPage = 4;
+    const itemsPerPage = 20;
     let arr = [];
 
     useEffect(() => {
@@ -68,9 +68,9 @@ const ImageFolder = () => {
                     {
                         control === true ? (
                             currentItems[0]?.map((id, index) => (
-                                <div className='col-md-3 col-6 g-3' key={index}>
+                                <div className='col-md-3 col-6 g-3' key={id}>
                                     <img className='img-thumbnail img-fluid style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
-                                    <figcaption style={{ 'fontSize': '10px' }}>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
+                                    <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
                                 </div>
                             ))
                         ) : (
@@ -84,17 +84,18 @@ const ImageFolder = () => {
 
             <ReactPaginate
                 breakLabel="..."
-                nextLabel="next >"
+                nextLabel=">>"  // also write next >
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
+                pageRangeDisplayed={3}
                 pageCount={pageCount}
-                previousLabel="< previous"
+                previousLabel="◀"  // also write < previous
                 renderOnZeroPageCount={null}
                 containerClassName='pagination'
                 pageLinkClassName='menu'
                 previousLinkClassName='page-num'
                 nextLinkClassName='page-num'
                 activeLinkClassName='active'
+                pageClassName='page-style'
             />
         </>
     );

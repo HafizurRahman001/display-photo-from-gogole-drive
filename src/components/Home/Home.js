@@ -23,8 +23,8 @@ const Home = () => {
                                     <img src={folderImage} className="card-img-top" alt="" />
                                     <div className="card-body">
                                         <h5 className="card-title">{id?.folderName}</h5>
-                                        <span className="card-text">Date: {id?.date}</span><br />
-                                        <span className="card-text">Total Images: {id?.idList?.length}</span>
+                                        <span className="card-text folder-text">Date: {id?.date}</span><br />
+                                        <span className="card-text folder-text">Total Images: <span stle={{ color: 'red' }}>{id?.idList?.length}</span></span>
                                     </div>
                                     <div className="card-footer">
                                         <button className="btn btn-danger w-100">
@@ -36,9 +36,9 @@ const Home = () => {
                         ))
                     ) : (
                         <div className="spiner_section">
-                            <div class="d-flex justify-content-center">
-                                <div class="spinner-border" role="status">
-                                    <span class="visually-hidden">Loading...</span>
+                            <div className="d-flex justify-content-center">
+                                <div className="spinner-border" role="status">
+                                    <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div>
                         </div>
