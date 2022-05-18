@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 
 const GetId = () => {
-    const [idList, setIdList] = useState();
+    const [imageId, setImageId] = useState([]);
+    const [control, setControl] = useState(true);
 
     useEffect(() => {
-        fetch('./imageIdData.json')
+        setControl(false)
+        fetch('http://localhost:5000/link-id')
             .then(res => res.json())
-            .then(data => setIdList(data))
-    }, [])
+            .then(data => {
+                setImageId(data)
+            }).finally(() => {
+                setControl(true)
+            })
+    }, []);
 
-    return [idList, setIdList]
+    return [imageId, setImageId, control, setControl]
 };
 
 export default GetId;

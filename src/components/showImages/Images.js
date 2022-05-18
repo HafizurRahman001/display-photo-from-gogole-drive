@@ -1,77 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import Pagination from '../Pagination/Pagination';
+import React from 'react';
+import GetId from '../../useState/GetId';
 import './Images.css'
 
 const Images = () => {
-    const [imageId, setImageId] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage] = useState(12);
-    const [control, setControl] = useState(true);
-
-    useEffect(() => {
-        setControl(false)
-        fetch('http://localhost:5000/link-id')
-            .then(res => res.json())
-            .then(data => {
-                setImageId(data)
-            }).finally(() => {
-                setControl(true)
-            })
-    }, []);
+    const [imageId, setImageId, control, setControl] = GetId();
 
 
-    //Get current post
-    const indexOfLastPost = currentPage * postPerPage;
-    const indexOfFirstPost = indexOfLastPost - postPerPage;
-
-    let currentPost = [];
-    imageId?.map(e => {
-        currentPost.push(e?.idList.slice(indexOfFirstPost, indexOfLastPost));
-    })
+    let arr = [(imageId[0])]
+    let arr2 = []
+    arr2.push(arr[0]?.idList);
 
 
-    const paginate = pageNumber => {
-        setCurrentPage(pageNumber)
-    };
 
-    let totalPost;
-    imageId?.map(e => {
-        totalPost = e?.idList?.length
-    })
+
+
+
 
     return (
-        <div>
-
-            <div class="container">
-                <div class="row gy-2">
-
-                    {control === true ? (
-                        // imageId?.map(objectId => (
-                        //     objectId?.idList?.map(imgId => (
-                        //         <div className='col-md-3 col-4' key={imgId}>
-                        //             <img className='img-thumbnail img-fluid' src={`https://drive.google.com/uc?id=${imgId}`} alt="" />
-                        //             <figcaption style={{ 'fontSize': '10px' }}>{objectId?.driveName}</figcaption>
-                        //         </div>
-                        //     ))
-                        // ))
-                        currentPost[0]?.map(id => (
-                            <div className='col-md-3 col-4' key={id}>
-                                <img className='img-thumbnail img-fluid' src={`https://drive.google.com/uc?id=${id}`} alt="" />
-                                <figcaption style={{ 'fontSize': '10px' }}>{imageId?.map(e => e?.driveName)}</figcaption>
-                            </div>
-                        ))
-                    ) : (
-
-                        <div className="spinner__control">
-                            <div class="spinner-border" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
+        <div className="container my-5">
+            <div className="row">
+                {control === true ? (
+                    arr2[0]?.map(e => (
+                        <div className='col-md-3 col-4 g-3' key={e}>
+                            <img className='img-thumbnail img-fluid style-img' src={`https://drive.google.com/uc?id=${e}`} alt="" />
                         </div>
-                    )
-                    }
-
-                </div>
-                <Pagination postsPerPage={postPerPage} totalPosts={totalPost} paginate={paginate}></Pagination>
+                    ))
+                ) : (
+                    <h1>Loading.....</h1>
+                )
+                }
             </div>
 
         </div>

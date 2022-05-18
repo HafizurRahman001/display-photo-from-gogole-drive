@@ -23,8 +23,11 @@ const DataEntry = () => {
         const splitLink = data.idList.split(',');
         imageIdObject.idList = splitLink;
         imageIdObject.date = dateCount + '/' + monthCount + '/' + yearCount;
-        imageIdObject.driveName = 'drive No: ' + data?.driveName;
+        imageIdObject.driveName = data?.driveName;
+        imageIdObject.folderName = data?.folderName;
         console.log(imageIdObject);
+
+
         fetch('http://localhost:5000/linkArray', {
             method: 'POST',
             headers: {
@@ -57,6 +60,8 @@ const DataEntry = () => {
                     <br />
                     <input style={{ width: '29%', marginBottom: '7px' }} className='me-1' {...register("driveName", { required: true })} placeholder="Drive email number (e.g 07)" /><br />
                     {errors.driveName && <span className='error-msg'>This field is required</span>}
+                    <input style={{ width: '29%', marginBottom: '7px' }} className='me-1' {...register("folderName", { required: true })} placeholder="Drive folder Name (e.g hafiz)" /><br />
+                    {errors.folderName && <span className='error-msg'>This field is required</span>}
                     <div className="submit-btn-section">
                         <input className='submit-btn' type="submit" />
                     </div>
