@@ -18,14 +18,12 @@ const DataEntry = () => {
 
 
     const onSubmit = (data) => {
-        console.log(date.getDate());
         let imageIdObject = {}
         const splitLink = data.idList.split(',');
         imageIdObject.idList = splitLink;
         imageIdObject.date = dateCount + '/' + monthCount + '/' + yearCount;
         imageIdObject.driveName = data?.driveName;
         imageIdObject.folderName = data?.folderName;
-        console.log(imageIdObject);
 
 
         fetch('http://localhost:5000/linkArray', {
@@ -54,19 +52,68 @@ const DataEntry = () => {
             <div className="input_div">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <textarea cols='46' className='me-1' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
+                    <textarea cols='46' className='me-1 text-area-input' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
                     {/* errors will return when field validation fails  */}
+                    {/* bootstrap offcanvas button */}
+                    <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span>
+
                     {errors.idList && <span className='error-msg'>This field is required</span>}
                     <br />
-                    <input style={{ width: '29%', marginBottom: '7px' }} className='me-1' {...register("driveName", { required: true })} placeholder="Drive email number (e.g 07)" /><br />
+                    <input style={{ width: '29%', marginBottom: '7px' }} className='me-1 data-entry-input' {...register("driveName", { required: true })} placeholder="Drive email number (e.g 07)" />
                     {errors.driveName && <span className='error-msg'>This field is required</span>}
-                    <input style={{ width: '29%', marginBottom: '7px' }} className='me-1' {...register("folderName", { required: true })} placeholder="Drive folder Name (e.g hafiz)" /><br />
+
+                    {/* bootstrap offcanvas button */}
+                    <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span><br />
+                    <input style={{ width: '29%', marginBottom: '7px' }} className='me-1 data-entry-input' {...register("folderName", { required: true })} placeholder="Drive folder Name (e.g hafiz)" />
                     {errors.folderName && <span className='error-msg'>This field is required</span>}
+
+                    {/* bootstrap offcanvas button */}
+                    <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight3" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span>
+                    <br />
                     <div className="submit-btn-section">
                         <input className='submit-btn' type="submit" />
                     </div>
                 </form>
             </div>
+
+
+
+            {/* bootstrap off canvas 1 */}
+
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header offCanvas-style">
+                    <h5 className="offcanvas-title" id="offcanvasRightLabel">...</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body text-start">
+                    খুবি সুন্দর প্রশ্ন
+                </div>
+            </div>
+
+            {/* bootstrap off canvas 2 */}
+
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header offCanvas-style">
+                    <h5 className="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    ...
+                </div>
+            </div>
+
+            {/* bootstrap off canvas 3 */}
+
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight3" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header offCanvas-style">
+                    <h5 className="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    ...
+                </div>
+            </div>
+
 
         </div>
 
@@ -74,3 +121,5 @@ const DataEntry = () => {
 };
 
 export default DataEntry;
+
+

@@ -82,26 +82,31 @@ const ImageFolder = () => {
                 </div>
             </div >
 
-            <ReactPaginate
-                breakLabel="..."
-                nextLabel=">>"  // also write next >
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={3}
-                pageCount={pageCount}
-                previousLabel="◀"  // also write < previous
-                renderOnZeroPageCount={null}
-                containerClassName='pagination'
-                pageLinkClassName='menu'
-                previousLinkClassName='page-num'
-                nextLinkClassName='page-num'
-                activeLinkClassName='active'
-                pageClassName='page-style'
-            />
+            {control === true ? (
+                <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="⇾"  // also write next >
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    previousLabel="⇽"  // also write < previous
+                    renderOnZeroPageCount={null}
+                    containerClassName='pagination'
+                    pageLinkClassName='menu'
+                    previousLinkClassName='page-num'
+                    nextLinkClassName='page-num'
+                    activeLinkClassName='active'
+                    pageClassName='page-style'
+                />
+            ) : ''}
         </>
     );
 };
 
 export default ImageFolder;
+
+
+
 
 
 

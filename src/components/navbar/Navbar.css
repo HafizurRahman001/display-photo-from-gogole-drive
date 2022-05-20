@@ -1,7 +1,13 @@
+.navbar-bg {
+  background-color: orangered;
+}
+.navbar-bg a {
+  color: wheat;
+}
 .link-style {
   text-decoration: none;
   color: black;
 }
 .link-style:hover {
-  color: gray;
+  color: black;
 }

@@ -1,4 +1,3 @@
-let a = [1, 2, 3, 4];
-a.map(e => {
-    console.log(e)
-})
+let a = { name: 'hafiz', age: 25, gender: 'man' }
+const { age } = a;
+console.log(age);
