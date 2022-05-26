@@ -41,6 +41,39 @@
 .page-style:hover {
   background-color: rgb(189, 189, 189);
 }
+.style-img {
+  height: 240px;
+  object-fit: cover;
+  object-position: center center;
+}
+.image-item-heading {
+  background: linear-gradient(45deg, salmon, khaki);
+  display: inline-block;
+  padding: 3px 17px;
+  border: 1px solid #9f9f9f96;
+  border-radius: 5px;
+}
+.img-item {
+  position: relative;
+}
+.icon-div {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #f6ff00;
+  border: 1px solid black;
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+.icon-div:hover {
+  background-color: tomato;
+  color: white;
+}
+.modal-img {
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  padding: 4px;
+}
 
 @media only screen and (max-width: 688px) {
   .img-fig {

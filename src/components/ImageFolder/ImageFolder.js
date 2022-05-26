@@ -6,8 +6,8 @@ import './imageFolder.css';
 
 const ImageFolder = () => {
     const [imageId, setImageId, control, setControl] = GetId();
+    const [imgIdToModal, setImgIdToModal] = useState('');
     const { id } = useParams();
-
     const filterImg = imageId?.filter(filterItem => filterItem?._id === id)
 
 
@@ -30,7 +30,7 @@ const ImageFolder = () => {
     const [itemOffset, setItemOffset] = useState(0);
 
 
-    const itemsPerPage = 20;
+    const itemsPerPage = 30;
     let arr = [];
 
     useEffect(() => {
@@ -59,17 +59,25 @@ const ImageFolder = () => {
     };
     // ----------------------------------------------------------------------
 
+
+
     return (
         <>
             <div className="container my-5">
-                <h3>{filterImg[0]?.folderName}</h3>
+                <h3 className='image-item-heading'>{filterImg[0]?.folderName}</h3>
                 <div className="row">
 
                     {
                         control === true ? (
                             currentItems[0]?.map((id, index) => (
-                                <div className='col-md-3 col-6 g-3' key={id}>
-                                    <img className='img-thumbnail img-fluid style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
+                                <div className='col-md-2 col-6 g-3' key={id}>
+                                    <div className="img-item">
+                                        <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
+
+                                        <div className="icon-div">
+                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} class="bi bi-arrows-fullscreen"></i>
+                                        </div>
+                                    </div>
                                     <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
                                 </div>
                             ))
@@ -78,6 +86,24 @@ const ImageFolder = () => {
 
                         )
                     }
+
+                    {/* ---------------------------Open modal----------------  */}
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div style={{ backgroundColor: '#47ff4d' }} class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Full Screen Image</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img className='img-fluid modal-img' src={`https://drive.google.com/uc?id=${imgIdToModal}`} alt="" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div >
@@ -104,6 +130,7 @@ const ImageFolder = () => {
 };
 
 export default ImageFolder;
+
 
 
 
