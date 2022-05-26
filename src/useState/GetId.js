@@ -6,7 +6,7 @@ const GetId = () => {
 
     useEffect(() => {
         setControl(false)
-        fetch('http://localhost:5000/link-id')
+        fetch('https://desolate-sierra-46653.herokuapp.com/link-id')
             .then(res => res.json())
             .then(data => {
                 setImageId(data)

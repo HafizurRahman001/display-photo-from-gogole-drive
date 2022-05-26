@@ -26,7 +26,7 @@ const DataEntry = () => {
         imageIdObject.folderName = data?.folderName;
 
 
-        fetch('http://localhost:5000/linkArray', {
+        fetch('https://desolate-sierra-46653.herokuapp.com/linkArray', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
