@@ -9,6 +9,11 @@
   text-decoration: none;
   color: black;
 }
+.link-style img {
+  width: 33px;
+  background: lavenderblush;
+  border-radius: 5px;
+}
 .link-style:hover {
   color: black;
 }

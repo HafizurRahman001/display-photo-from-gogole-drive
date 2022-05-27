@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import logoImg from '../../Images/photos.png'
 
 const Navbar = () => {
     return (
@@ -8,7 +9,9 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg navbar-bg">
                 <div className="container-fluid">
                     <div className="navbar-brand" href="#!">
-                        <Link className='link-style' to='/home'>Navbar</Link>
+                        <Link className='link-style' to='/home'>
+                            <img src={logoImg} alt="" />
+                        </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
