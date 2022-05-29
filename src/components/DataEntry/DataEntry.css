@@ -16,6 +16,9 @@
   color: gray;
   cursor: pointer;
 }
+.data-entry-icon-style:hover {
+  color: crimson;
+}
 
 .offCanvas-style {
   background: yellowgreen;
