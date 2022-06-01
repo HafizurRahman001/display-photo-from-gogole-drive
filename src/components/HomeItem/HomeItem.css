@@ -60,8 +60,8 @@
   font-size: 68px;
 }
 .folder-card {
-  box-shadow: 2px 1px 3px #00000057;
+  box-shadow: 2px 1px 10px #0000005e;
 }
 .folder-card:hover {
-  background-color: lavender;
+  background-color: #fa9dff;
 }
