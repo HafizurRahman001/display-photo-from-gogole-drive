@@ -65,17 +65,17 @@ const ImageFolder = () => {
         <>
             <div className="container my-5">
                 <h3 className='image-item-heading'>{filterImg[0]?.folderName}</h3>
-                <div className="row">
+                <div className="row row-cols-2 row-cols-md-5 g-3">
 
                     {
                         control === true ? (
                             currentItems[0]?.map((id, index) => (
-                                <div className='col-md-2 col-6 g-3' key={id}>
+                                <div className='col' key={id}>
                                     <div className="img-item">
                                         <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
 
                                         <div className="icon-div">
-                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} class="bi bi-arrows-fullscreen"></i>
+                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} class="bi bi-arrows-fullscreen fullscreen-arrow"></i>
                                         </div>
                                     </div>
                                     <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
