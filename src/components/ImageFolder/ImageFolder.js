@@ -64,7 +64,7 @@ const ImageFolder = () => {
     return (
         <>
             <div className="container my-5">
-                <h3 className='image-item-heading'>{filterImg[0]?.folderName}</h3>
+                <h3 className='image-item-heading mb-4'>{filterImg[0]?.folderName}</h3>
                 <div className="row row-cols-2 row-cols-md-5 g-3">
 
                     {

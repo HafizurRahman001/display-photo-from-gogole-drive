@@ -50,7 +50,7 @@ const HomeItem = () => {
                                             <i class="bi bi-folder"></i>
                                         </div>
                                         <div className="card-body folder-card-body">
-                                            <h5 className="card-title">{id?.folderName}</h5>
+                                            <h5 className="card-title card-heading">{id?.folderName}</h5>
                                             <span className="card-text folder-text">Date: {id?.date}</span><br />
                                             <span>File Path: {id?.driveName}</span><br />
                                             <span className="card-text folder-text">Total Images: <span style={{ fontWeight: 'bold' }}>{id?.idList?.length}</span></span>
