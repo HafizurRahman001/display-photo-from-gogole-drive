@@ -24,9 +24,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 5rem;
   font-size: 1.2rem;
   gap: 5px;
+  padding-bottom: 5rem;
+  margin: 0px;
 }
 .pagination .page-num {
   padding: 2px 12px;
