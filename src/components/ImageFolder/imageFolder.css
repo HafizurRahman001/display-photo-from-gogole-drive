@@ -2,6 +2,14 @@
   font-size: 10px;
   font-weight: bold;
 }
+.spiner_section {
+  width: 100px;
+  margin: auto;
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* paginaton section design */
 .pagination {
