@@ -5,7 +5,7 @@ import GetId from '../../useState/GetId';
 import './imageFolder.css';
 
 const ImageFolder = () => {
-    const [imageId, setImageId, control, setControl] = GetId();
+    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
     const [imgIdToModal, setImgIdToModal] = useState('');
     const { id } = useParams();
     const filterImg = imageId?.filter(filterItem => filterItem?._id === id)
@@ -16,7 +16,9 @@ const ImageFolder = () => {
         return idArr.push(e?.idList)
     });
 
-
+    console.log(
+        'test', darkMode
+    );
 
 
 

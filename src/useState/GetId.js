@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 const GetId = () => {
     const [imageId, setImageId] = useState([]);
     const [control, setControl] = useState(true);
+    const [darkMode, setDarkMode] = useState({});
 
     useEffect(() => {
         setControl(false)
@@ -15,7 +16,7 @@ const GetId = () => {
             })
     }, []);
 
-    return [imageId, setImageId, control, setControl]
+    return [imageId, setImageId, control, setControl, darkMode, setDarkMode]
 };
 
 export default GetId;

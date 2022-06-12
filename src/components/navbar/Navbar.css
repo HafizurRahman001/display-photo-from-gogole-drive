@@ -1,5 +1,5 @@
 .navbar-bg {
-  background-color: orangered;
+  background-color: #262b3a;
 }
 .navbar-bg a {
   color: wheat;
@@ -14,6 +14,15 @@
   background: lavenderblush;
   border-radius: 5px;
 }
+.nav-link:hover {
+  color: yellow;
+}
 .link-style:hover {
-  color: black;
+  color: yellow;
+}
+.toggle-dark-mode {
+  padding: 0px 12px;
+}
+.toggle-dark-mode i {
+  font-size: 30px;
 }

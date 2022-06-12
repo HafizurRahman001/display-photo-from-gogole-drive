@@ -1,11 +1,11 @@
 .submit-btn {
   width: 29%;
   text-align: center !important;
-  background-color: #ed1450;
+  background-color: #333954;
   border: 1px solid transparent;
   border-radius: 3px;
   color: white;
-  box-shadow: 1px 1px 2px #4b4b4b;
+  box-shadow: 1px 1px 2px #0000004d;
   padding: 2px 0px;
   margin-right: 19px;
 }
@@ -19,12 +19,24 @@
 .data-entry-icon-style:hover {
   color: crimson;
 }
-
-.offCanvas-style {
+form > textarea,
+input {
+  background: transparent;
+  border: 1px solid #6b6b6d;
+  border-radius: 2px;
+}
+form .offCanvas-style {
   background: yellowgreen;
   box-shadow: 0px 1px 6px black;
 }
 
+.offcanvas-body {
+  background-color: #1a1d2a;
+}
+
+.offcanvas-header {
+  background-color: #262b3aed;
+}
 @media only screen and (max-width: 688px) {
   .text-area-input {
     width: 90%;

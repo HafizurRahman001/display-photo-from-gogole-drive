@@ -1,6 +1,6 @@
 .img-fig {
-  background-color: #3b4170;
-  color: #fff;
+  background-color: #464646;
+  color: #ffffffcf;
   font-size: 12px;
   font-weight: 600;
   margin-top: 3px;
@@ -9,6 +9,7 @@
 .img-thumbnail {
   border: 1px solid #acaeb2 !important;
   border-radius: 0px !important;
+  background-color: #1b202c;
 }
 .spiner_section {
   width: 100px;
@@ -65,7 +66,7 @@
   object-position: center center;
 }
 .image-item-heading {
-  background: linear-gradient(45deg, salmon, khaki);
+  background: linear-gradient(45deg, #212529, #333333);
   display: inline-block;
   padding: 3px 17px;
   border: 1px solid #9f9f9f96;
@@ -78,15 +79,15 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background-color: #f6ff00;
+  background-color: #212529;
   border: 1px solid black;
   padding: 5px 7px;
   border-radius: 3px;
 }
 
 .icon-div:hover {
-  background-color: tomato;
-  color: white;
+  background-color: #6c757d;
+  color: yellow;
 }
 .modal-img {
   border: 1px solid darkgrey;

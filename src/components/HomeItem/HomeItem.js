@@ -7,7 +7,7 @@ import './HomeItem.css';
 import ReactPaginate from 'react-paginate';
 
 const HomeItem = () => {
-    const [imageId, setImageId, control, setControl] = GetId();
+    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
 
     // ----------------------react pagination functionality---------------------
     // We start with an empty list of items.
@@ -32,11 +32,11 @@ const HomeItem = () => {
 
         setItemOffset(newOffset);
     };
-
+    console.log('darkmode', darkMode);
 
     return (
         <>
-            <div className='container my-3'>
+            <div style={darkMode?.mainBody} className='container my-3'>
                 <div className="container my-3">
                     <h1>Welcome to Drive photo</h1>
                 </div>
@@ -47,13 +47,14 @@ const HomeItem = () => {
                                 <div key={id?._id} className="col">
                                     <div className="card h-100 folder-card">
                                         <div className="folder-icon">
-                                            <i class="bi bi-folder"></i>
+                                            <i className="bi bi-folder bi-folder-icon"></i>
                                         </div>
+
                                         <div className="card-body folder-card-body">
                                             <h5 className="card-title card-heading">{id?.folderName}</h5>
-                                            <span className="card-text folder-text">Date: {id?.date}</span><br />
-                                            <span>File Path: {id?.driveName}</span><br />
-                                            <span className="card-text folder-text">Total Images: <span style={{ fontWeight: 'bold' }}>{id?.idList?.length}</span></span>
+                                            <span className=" card-common-style card-text folder-text">Date: {id?.date}</span><br />
+                                            <span className=' card-common-style '>File Path: {id?.driveName}</span><br />
+                                            <span className=" card-common-style card-text folder-text">Total Images: <span className=" card-common-style" style={{ fontWeight: 'bold' }}>{id?.idList?.length}</span></span>
                                         </div>
                                         <div className="card-footer">
                                             <button className="btn open-btn w-100">

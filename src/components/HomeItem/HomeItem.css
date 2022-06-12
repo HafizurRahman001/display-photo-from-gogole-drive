@@ -6,16 +6,20 @@
   justify-content: center;
   align-items: center;
 }
-.folder-text {
-  color: darkslategray;
-}
+
 .open-btn {
-  background-color: crimson;
+  background-color: #1b202c;
   color: white;
 }
 .open-btn:hover {
-  background-color: crimson;
+  background-color: #3e4352;
   border: none;
+}
+.bi-folder-icon {
+  border: 1px dotted#929aa0;
+  padding: 0 10px;
+  border-radius: 50%;
+  background-color: #1b202c;
 }
 
 /* paginaton section design */
@@ -59,8 +63,14 @@
 }
 .folder-icon {
   font-size: 68px;
+  padding-top: 5px;
 }
+.card-common-style {
+  color: #f7f7f78a;
+}
+
 .folder-card {
+  background-color: #262b3a;
   box-shadow: 2px 1px 10px #0000005e;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -70,7 +80,7 @@
 }
 
 .folder-card:hover {
-  background-color: #ffa0008f;
+  background-color: #2d3243;
   margin-top: -6px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;

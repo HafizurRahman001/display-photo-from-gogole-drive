@@ -2,8 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import logoImg from '../../Images/photos.png'
+import GetId from '../../useState/GetId';
 
 const Navbar = () => {
+
+    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId()
+
+
+    const toggleDarkMode = () => {
+        setDarkMode({
+            mainBody: {
+                backgroundColor: '#1B202C',
+                color: '#F7F7F7'
+            },
+            cardBody: {
+                backgroundColor: '#',
+                color: '#F7F7F7'
+            },
+            headingColor: {
+                color: 'white'
+            }
+        })
+    }
+
+
+
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-bg">
@@ -32,7 +56,7 @@ const Navbar = () => {
                                 <a className="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </a>
-                                <ul style={{ backgroundColor: 'orangered' }} className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul style={{ backgroundColor: '#262b3a' }} className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="#!">Action</a></li>
                                     <li><a className="dropdown-item" href="#!">Another action</a></li>
                                     <li><hr className="dropdown-divider" /></li>
@@ -44,6 +68,9 @@ const Navbar = () => {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-info" type="submit">Search</button>
                         </form>
+                        <div className="toggle-dark-mode">
+                            <i onClick={toggleDarkMode} class="bi bi-brightness-high-fill"></i>
+                        </div>
                     </div>
                 </div>
             </nav>

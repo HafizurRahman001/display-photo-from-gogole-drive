@@ -52,20 +52,20 @@ const DataEntry = () => {
             <div className="input_div">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <textarea cols='58' className='me-1 text-area-input' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
+                    <textarea cols='46' className='me-1 text-area-input' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
                     {/* errors will return when field validation fails  */}
                     {/* bootstrap offcanvas button */}
                     <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span>
 
-                    {errors.idList && <span className='error-msg'>This field is required</span>}
+                    {errors.idList && <span className='error-msg'> <br /> This field is required</span>}
                     <br />
                     <input style={{ width: '29%', marginBottom: '7px' }} className='me-1 data-entry-input' {...register("driveName", { required: true })} placeholder="Drive email number (e.g 07)" />
-                    {errors.driveName && <span className='error-msg'>This field is required</span>}
+                    {errors.driveName && <span className='error-msg'> <br /> This field is required</span>}
 
                     {/* bootstrap offcanvas button */}
                     <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span><br />
                     <input style={{ width: '29%', marginBottom: '7px' }} className='me-1 data-entry-input' {...register("folderName", { required: true })} placeholder="Drive folder Name (e.g hafiz)" />
-                    {errors.folderName && <span className='error-msg'>This field is required</span>}
+                    {errors.folderName && <span className='error-msg'><br /> This field is required</span>}
 
                     {/* bootstrap offcanvas button */}
                     <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight3" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span>
