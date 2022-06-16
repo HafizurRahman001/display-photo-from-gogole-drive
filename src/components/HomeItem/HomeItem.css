@@ -16,8 +16,8 @@
   border: none;
 }
 .bi-folder-icon {
-  border: 1px dotted#929aa0;
-  padding: 0 10px;
+  border: 1px solid #929aa0;
+  padding: 4px 13px;
   border-radius: 50%;
   background-color: #1b202c;
 }

@@ -26,3 +26,15 @@
 .toggle-dark-mode i {
   font-size: 30px;
 }
+.navbar_toggler_style {
+  background-color: #2d3243;
+  box-shadow: 1px 1px #1a1e29;
+}
+
+@media only screen and (max-width: 6888px) {
+  .collapse ul {
+    text-align: left;
+  }
+  .collapse ul li {
+  }
+}
