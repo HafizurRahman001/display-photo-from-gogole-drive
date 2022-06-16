@@ -30,11 +30,22 @@
   background-color: #2d3243;
   box-shadow: 1px 1px #1a1e29;
 }
+.total_image_section {
+  background-color: rgb(27 32 44);
+  cursor: default;
+  border: 1px solid #8c959f57;
+  outline: none;
+}
+.total_image_section:hover {
+  background-color: rgb(27 32 44);
+}
 
-@media only screen and (max-width: 6888px) {
+@media only screen and (max-width: 688px) {
   .collapse ul {
     text-align: left;
   }
-  .collapse ul li {
+  .collapse ul a li {
+    background-color: #1b202c;
+    padding: 3px 5px;
   }
 }

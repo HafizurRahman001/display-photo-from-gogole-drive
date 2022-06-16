@@ -5,3 +5,8 @@
 // }
 // console.log(`${arr.join('')}`);
 
+
+
+let a = [1, 2, 3];
+const sum = a.reduce((init, final) => init + final, 0);
+console.log(sum);

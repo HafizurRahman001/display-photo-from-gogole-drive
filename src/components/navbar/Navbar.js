@@ -6,7 +6,7 @@ import GetId from '../../useState/GetId';
 
 const Navbar = () => {
 
-    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId()
+    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
 
 
     const toggleDarkMode = () => {
@@ -24,8 +24,13 @@ const Navbar = () => {
             }
         })
     }
+    let totalImageArray = [];
+    imageId?.map(item => {
+        totalImageArray.push(item?.idList?.length);
+    });
 
-
+    const totalAmountOfImage = totalImageArray.reduce((initialValue, finalValue) => initialValue + finalValue, 0);
+    console.log(totalAmountOfImage);
 
 
     return (
@@ -52,7 +57,18 @@ const Navbar = () => {
                                     <Link className='link-style' to="/data-entry">Data-Entry</Link>
                                 </li>
                             </a>
-                            <li className="nav-item dropdown">
+                            <a href="#!" className='nav-link'>
+                                <li className="nav-item">
+                                    <span disabled type="" class="btn btn-primary position-relative total_image_section">
+                                        Total Image
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            {totalAmountOfImage}
+                                            <span class="visually-hidden">unread messages</span>
+                                        </span>
+                                    </span>
+                                </li>
+                            </a>
+                            {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </a>
@@ -62,7 +78,7 @@ const Navbar = () => {
                                     <li><hr className="dropdown-divider" /></li>
                                     <li><a className="dropdown-item" href="#!">Something else here</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
                         </ul>
                         <form className="d-flex" role="search">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

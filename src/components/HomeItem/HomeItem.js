@@ -32,7 +32,10 @@ const HomeItem = () => {
 
         setItemOffset(newOffset);
     };
-    console.log('darkmode', darkMode);
+    // console.log('darkmode', darkMode);
+
+
+
 
     return (
         <>
