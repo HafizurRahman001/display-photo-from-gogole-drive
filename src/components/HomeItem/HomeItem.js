@@ -41,7 +41,7 @@ const HomeItem = () => {
         <>
             <div style={darkMode?.mainBody} className='container my-3'>
                 <div className="container my-3">
-                    <h1>Welcome to Drive photo</h1>
+                    <h1>All Drive Folders</h1>
                 </div>
                 <div className="my-5">
                     <div className="row row-cols-1 row-cols-md-4 g-4">

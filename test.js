@@ -7,6 +7,6 @@
 
 
 
-let a = [1, 2, 3];
-const sum = a.reduce((init, final) => init + final, 0);
-console.log(sum);
+let a = ['1', '2', '3', '3', '4'];
+const result = [...new Set(a)]
+console.log(result);

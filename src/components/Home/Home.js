@@ -32,6 +32,30 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+
+                <div className="feature-section my-4">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <div className="feature-text text-start">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem fugit fuga beatae nemo ea officia, deleniti possimus repudiandae, aspernatur repellendus nisi expedita harum sunt fugiat tempore ab odit cupiditate.
+                            </div>
+
+                        </div>
+                        <div className="col-md-4">
+                            <div className="feature-text text-start">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem fugit fuga beatae nemo ea officia, deleniti possimus repudiandae, aspernatur repellendus nisi expedita harum sunt fugiat tempore ab odit cupiditate.
+                            </div>
+
+                        </div>
+                        <div className="col-md-4">
+                            <div className="feature-text text-start">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem fugit fuga beatae nemo ea officia, deleniti possimus repudiandae, aspernatur repellendus nisi expedita harum sunt fugiat tempore ab odit cupiditate.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
