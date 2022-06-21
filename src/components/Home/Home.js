@@ -12,8 +12,8 @@ const Home = () => {
                         <div className="hero-main-text">
                             <h1>WELCOME TO DRIVE PHOTO</h1>
                         </div>
-                        <div className="hero-sub-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus harum earum rem dignissimos consequatur, aspernatur suscipit nam sit sed animi?
+                        <div className="hero-sub-text text-start">
+                            Here I'm trying to keep my all images that i have captured in my life as archive. These all photos are from the Google drive database. I can easily access them and find out their file path as if I can download them and reuse.
                         </div>
                         <div className="hero-btn my-3">
                             <button className="btn btn-primary explore-btn">
