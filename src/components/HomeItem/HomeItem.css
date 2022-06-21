@@ -17,7 +17,7 @@
 }
 .bi-folder-icon {
   border: 1px solid #929aa0;
-  padding: 4px 13px;
+  padding: 4px 14px;
   border-radius: 50%;
   background-color: #1b202c;
 }
@@ -63,7 +63,7 @@
 }
 .folder-icon {
   font-size: 68px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 .card-common-style {
   color: #f7f7f78a;
