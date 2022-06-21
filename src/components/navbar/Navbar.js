@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import logoImg from '../../Images/photos.png'
@@ -27,11 +27,9 @@ const Navbar = () => {
 
     // calculate the total image amount
     let totalImageArray = [];
-    useEffect(() => {
-        imageId?.map(item => {
-            totalImageArray.push(item?.idList?.length);
-        });
-    }, [imageId])
+    imageId?.map(item => {
+        totalImageArray.push(item?.idList?.length);
+    });
 
     const totalAmountOfImage = totalImageArray.reduce((initialValue, finalValue) => initialValue + finalValue, 0);
     // console.log(totalAmountOfImage);
