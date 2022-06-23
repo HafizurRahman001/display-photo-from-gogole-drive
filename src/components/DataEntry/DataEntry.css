@@ -6,7 +6,7 @@
   border-radius: 3px;
   color: white;
   box-shadow: 1px 1px 2px #0000004d;
-  padding: 2px 0px;
+  padding: 6px 0px;
   margin-right: 19px;
 }
 .error-msg {
@@ -17,13 +17,14 @@
   cursor: pointer;
 }
 .data-entry-icon-style:hover {
-  color: crimson;
+  color: yellow;
 }
 form > textarea,
 input {
   background: transparent;
   border: 1px solid #6b6b6d;
   border-radius: 2px;
+  padding: 6px 3px;
 }
 form .offCanvas-style {
   background: yellowgreen;

@@ -8,7 +8,7 @@ const Home = () => {
         <div className='container my-5'>
             <div className="row d-flex align-items-center">
                 <div className="col-md-6">
-                    <div className="hero-head">
+                    <div className="hero-head text-start">
                         <div className="hero-main-text">
                             <h1>WELCOME TO DRIVE PHOTO</h1>
                         </div>
@@ -16,7 +16,7 @@ const Home = () => {
                             <h4 className='pb-2'>Typewritting here .....</h4>
                         </div>
                         <div className="hero-sub-text text-start">
-                            Here I'm trying to keep my all images that i have captured in my life as archive. These all photos are from the Google drive database. I can easily access them and find out their file path as if I can download them and reuse.
+                            Here I'm trying to keep my all images that i have captured in my life as archive. These all photos are from the Google drive database. I can easily access them and find out their file path as if I can download them and reuse. find out their file path as if I can download them and reuse.
                         </div>
                         <div className="hero-btn my-3">
                             <button className="btn btn-primary explore-btn">
