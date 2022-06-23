@@ -5,8 +5,3 @@
 // }
 // console.log(`${arr.join('')}`);
 
-
-
-let a = ['1', '2', '3', '3', '4'];
-const result = [...new Set(a)]
-console.log(result);

@@ -52,7 +52,7 @@ const DataEntry = () => {
             <div className="input_div">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <textarea style={{ color: 'white' }} cols='46' className='me-1 text-area-input' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
+                    <textarea style={{ color: 'white' }} cols='58' className='me-1 text-area-input' {...register("idList", { required: true })} placeholder="Enter images Id. (e.g hafiz,mamun,morium)" />
 
                     {/* bootstrap offcanvas button */}
                     <span className="data-entry-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight"><i className="bi bi-info-circle-fill data-entry-icon-style"></i></span>
