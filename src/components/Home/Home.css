@@ -1,11 +1,10 @@
 .hero-image-container {
-  background-color: #8a8a8a;
   padding: 1px;
-  border: 1px solid transparent;
+  border: 1px solid #262b3a;
   border-radius: 3px;
 }
 .hero-image {
-  height: 450px;
+  height: 242px;
   width: 100%;
   object-fit: cover;
   border-radius: 3px;
@@ -17,4 +16,16 @@
 .explore-btn:hover {
   padding: 7px 15px;
   transition: all 0.1s ease-in-out;
+}
+.feature-text {
+  padding: 10px 8px;
+  box-shadow: 1px 2px 0px #0f121b;
+  border-radius: 3px;
+}
+.feature-icon {
+  font-size: 55px;
+  background: #262b3a40;
+}
+.feature-body p {
+  color: #767676;
 }
