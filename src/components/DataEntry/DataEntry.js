@@ -87,7 +87,7 @@ const DataEntry = () => {
 
             {/* bootstrap off canvas 1 */}
 
-            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
                 <div className="offcanvas-header offCanvas-style">
                     <h5 className="offcanvas-title" id="offcanvasRightLabel">...</h5>
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

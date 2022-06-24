@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { useParams } from 'react-router';
 import GetId from '../../useState/GetId';
 import './imageFolder.css';
+import LazyLoad from 'react-lazyload';
 
 const ImageFolder = () => {
     const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
@@ -72,15 +73,19 @@ const ImageFolder = () => {
                     {
                         control === true ? (
                             currentItems[0]?.map((id, index) => (
-                                <div className='col' key={id}>
-                                    <div className="img-item">
-                                        <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
+                                <div className="list">
+                                    <LazyLoad height={200} once>
+                                        <div className='col' key={id}>
+                                            <div className="img-item">
+                                                <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
 
-                                        <div className="icon-div">
-                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} className="bi bi-arrows-fullscreen fullscreen-arrow"></i>
+                                                <div className="icon-div">
+                                                    <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} className="bi bi-arrows-fullscreen fullscreen-arrow"></i>
+                                                </div>
+                                            </div>
+                                            <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
                                         </div>
-                                    </div>
-                                    <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
+                                    </LazyLoad>
                                 </div>
                             ))
                         ) : (
