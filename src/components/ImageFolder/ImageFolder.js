@@ -77,7 +77,7 @@ const ImageFolder = () => {
                                         <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
 
                                         <div className="icon-div">
-                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} class="bi bi-arrows-fullscreen fullscreen-arrow"></i>
+                                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} className="bi bi-arrows-fullscreen fullscreen-arrow"></i>
                                         </div>
                                     </div>
                                     <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
@@ -96,18 +96,18 @@ const ImageFolder = () => {
                     }
 
                     {/* ---------------------------Open modal----------------  */}
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div style={{ backgroundColor: '#1b202c' }} class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Full Screen Image</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div style={{ backgroundColor: '#1b202c' }} className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">Full Screen Image</h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div className="modal-body">
                                     <img className='img-fluid modal-img' src={`https://drive.google.com/uc?id=${imgIdToModal}`} alt="" />
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

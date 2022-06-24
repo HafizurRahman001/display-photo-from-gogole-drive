@@ -22,7 +22,7 @@ const Home = () => {
                             <button className="btn btn-primary explore-btn">
                                 <Link className='hero-btn-style' to="/all-images">Explore Images</Link>
                                 <span className="hero-btn-arrow-icon px-2">
-                                    <i class="bi bi-arrow-right-circle"></i>
+                                    <i className="bi bi-arrow-right-circle"></i>
                                 </span>
                             </button>
                         </div>
@@ -59,7 +59,7 @@ const Home = () => {
                         <div className="col-md-4">
                             <div className="feature-text text-start">
                                 <div className="feature-icon text-center">
-                                    <i class="bi bi-bar-chart-fill"></i>
+                                    <i className="bi bi-bar-chart-fill"></i>
                                 </div>
                                 <div className='feature-body'>
                                     <div className="feature-heading">
@@ -75,7 +75,7 @@ const Home = () => {
                         <div className="col-md-4">
                             <div className="feature-text text-start">
                                 <div className="feature-icon text-center">
-                                    <i class="bi bi-bar-chart-fill"></i>
+                                    <i className="bi bi-bar-chart-fill"></i>
                                 </div>
                                 <div className='feature-body'>
                                     <div className="feature-heading">
@@ -91,7 +91,7 @@ const Home = () => {
                         <div className="col-md-4">
                             <div className="feature-text text-start">
                                 <div className="feature-icon text-center">
-                                    <i class="bi bi-bar-chart-fill"></i>
+                                    <i className="bi bi-bar-chart-fill"></i>
                                 </div>
                                 <div className='feature-body'>
                                     <div className="feature-heading">

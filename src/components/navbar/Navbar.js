@@ -61,11 +61,11 @@ const Navbar = () => {
                             </a>
                             <a href="#!" className='nav-link'>
                                 <li className="nav-item">
-                                    <span disabled type="" class="btn btn-primary position-relative total_image_section">
+                                    <span disabled type="" className="btn btn-primary position-relative total_image_section">
                                         Total Image
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                             {totalAmountOfImage}
-                                            <span class="visually-hidden">unread messages</span>
+                                            <span className="visually-hidden">unread messages</span>
                                         </span>
                                     </span>
                                 </li>
@@ -87,7 +87,7 @@ const Navbar = () => {
                             <button className="btn btn-outline-info" type="submit">Search</button>
                         </form>
                         <div className="toggle-dark-mode">
-                            <i onClick={toggleDarkMode} class="bi bi-brightness-high-fill"></i>
+                            <i onClick={toggleDarkMode} className="bi bi-brightness-high-fill"></i>
                         </div>
                     </div>
                 </div>
