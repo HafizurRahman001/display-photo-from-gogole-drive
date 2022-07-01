@@ -125,6 +125,7 @@ const Home = () => {
                                             </div>
                                         </div>
                                     </Zoom>
+
                                 </div>
                             </div>
                             <div className="row">
