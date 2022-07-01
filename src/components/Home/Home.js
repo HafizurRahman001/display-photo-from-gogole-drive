@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import heroImg from '../../Images/hero-image.jpg';
 import { Link } from 'react-router-dom';
+import Typewriter from 'typewriter-effect';
+import GetId from '../../useState/GetId';
 
 const Home = () => {
+    const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
+    const [overallDetails, setOverallDetails] = useState({});
+
+
+    const lengthOfEveryArray = [];
+    const driveNumberOfEveryArray = [];
+
+    imageId?.map(singleId => {
+        lengthOfEveryArray.push(singleId?.idList?.length);
+        driveNumberOfEveryArray.push(Number(singleId?.driveName));
+    });
+
+    const totalImagesOfAllFolder = lengthOfEveryArray?.reduce((init, final) => (init + final), 0);
+
+    useEffect(() => {
+        setOverallDetails({ 'totalFolder': imageId?.length, 'totalImages': totalImagesOfAllFolder, 'totalDrive': driveNumberOfEveryArray?.length });
+
+    }, [imageId?.length]);
+
+    const uniqueDriveNumber = [...new Set(driveNumberOfEveryArray)]
+
+    // console.log('test', driveNumberOfEveryArray);
+
+
     return (
         <div className='container my-5'>
             <div className="row d-flex align-items-center">
@@ -13,7 +39,16 @@ const Home = () => {
                             <h1>WELCOME TO DRIVE PHOTO</h1>
                         </div>
                         <div className="hero-sub-main-text">
-                            <h4 className='pb-2'>Typewritting here .....</h4>
+
+                            <h4>
+                                <Typewriter
+                                    options={{
+                                        strings: [`Total Folder : <span style='color:yellow'>${overallDetails?.totalFolder}</span>`, `Total Images : <span style='color:yellow'>${overallDetails?.totalImages}</span>`, `Total Drive Number : <span style='color:yellow'>${uniqueDriveNumber?.length}</span>`],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </h4>
                         </div>
                         <div className="hero-sub-text text-start">
                             Here I'm trying to keep my all images that i have captured in my life as archive. These all photos are from the Google drive database. I can easily access them and find out their file path as if I can download them and reuse. find out their file path as if I can download them and reuse.

@@ -5,3 +5,9 @@
 // }
 // console.log(`${arr.join('')}`);
 
+
+
+const a = [1, 1, 2]
+
+const final = [...new Set(a)]
+console.log(final);

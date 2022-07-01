@@ -64,6 +64,7 @@ const ImageFolder = () => {
 
 
 
+
     return (
         <>
             <div className="container my-5">
@@ -78,7 +79,6 @@ const ImageFolder = () => {
                                         <div className='col' key={id}>
                                             <div className="img-item">
                                                 <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
-
                                                 <div className="icon-div">
                                                     <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} className="bi bi-arrows-fullscreen fullscreen-arrow"></i>
                                                 </div>

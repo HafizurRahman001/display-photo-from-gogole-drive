@@ -29,3 +29,9 @@
 .feature-body p {
   color: #767676;
 }
+.Typewriter__wrapper {
+  color: rgb(0, 242, 255);
+}
+.typewritter__style {
+  color: tomato;
+}

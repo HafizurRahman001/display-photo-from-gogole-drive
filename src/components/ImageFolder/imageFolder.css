@@ -75,15 +75,7 @@
 .img-item {
   position: relative;
 }
-.icon-div {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: #212529;
-  border: 1px solid black;
-  padding: 5px 7px;
-  border-radius: 3px;
-}
+
 
 .icon-div:hover {
   background-color: #6c757d;
