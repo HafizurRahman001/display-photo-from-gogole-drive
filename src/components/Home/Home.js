@@ -57,7 +57,7 @@ const Home = () => {
                             <h4>
                                 <Typewriter
                                     options={{
-                                        strings: [`Total Folder : <span style='color:yellow'>${overallDetails?.totalFolder}</span>`, `Total Images : <span style='color:yellow'>${overallDetails?.totalImages}</span>`, `Total Drive Number : <span style='color:yellow'>${uniqueDriveNumber?.length}</span>`],
+                                        strings: [`Total Folders : <span style='color:yellow'>${overallDetails?.totalFolder}</span>`, `Total Images : <span style='color:yellow'>${overallDetails?.totalImages}</span>`, `Total Drive Number : <span style='color:yellow'>${uniqueDriveNumber?.length}</span>`],
                                         autoStart: true,
                                         loop: true,
                                     }}
