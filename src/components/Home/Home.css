@@ -1,5 +1,5 @@
 .hero-image-container {
-  padding: 1px;
+  padding: 5px;
   border: 1px solid #262b3a;
   border-radius: 3px;
 }
@@ -34,4 +34,32 @@
 }
 .typewritter__style {
   color: tomato;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 300px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+.indicator {
+  background: gray;
+  border: 1px solid black;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: none;
+}
+.carousel {
+  display: none;
+}
+.default-nav {
+  display: none !important;
 }
