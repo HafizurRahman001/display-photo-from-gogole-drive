@@ -105,7 +105,7 @@ const Home = () => {
                                     </Zoom>
                                 </div>
                                 <div className="col-md-6 col-6">
-                                    <Zoom duration={1700} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
+                                    <Zoom duration={1600} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
                                         <div className="each-slide-effect">
                                             <div style={{
                                                 backgroundImage: `url(${heroImg4})`
@@ -130,7 +130,7 @@ const Home = () => {
                             </div>
                             <div className="row">
                                 <div className="col-md-6 col-6">
-                                    <Zoom duration={1900} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
+                                    <Zoom duration={1700} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
                                         <div className="each-slide-effect">
                                             <div style={{
                                                 backgroundImage: `url(${heroImg7})`
@@ -152,7 +152,7 @@ const Home = () => {
                                     </Zoom>
                                 </div>
                                 <div className="col-md-6 col-6">
-                                    <Zoom duration={2100} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
+                                    <Zoom duration={1800} indicators={index => <div className="indicator">{index + 1}</div>} scale={1.4}>
                                         <div className="each-slide-effect">
                                             <div style={{
                                                 backgroundImage: `url(${heroImg10})`
