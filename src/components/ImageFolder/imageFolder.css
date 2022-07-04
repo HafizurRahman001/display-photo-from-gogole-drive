@@ -75,7 +75,17 @@
 .img-item {
   position: relative;
 }
-
+.icon-div {
+  position: absolute;
+  bottom: 7px;
+  right: 11px;
+  background-color: #1b202c;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7px;
+  border-radius: 5px;
+}
 
 .icon-div:hover {
   background-color: #6c757d;
@@ -86,7 +96,9 @@
   border-radius: 4px;
   padding: 4px;
 }
-
+.btn-close {
+  border: 1px solid #6e6e6e;
+}
 @media only screen and (max-width: 688px) {
   .img-fig {
     font-size: 10px;
