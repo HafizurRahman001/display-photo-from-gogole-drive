@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import GetId from '../../useState/GetId';
-import folderImage from '../../Images/image-folder.png';
 import { Link } from 'react-router-dom';
 import './HomeItem.css';
-
 import ReactPaginate from 'react-paginate';
+import { HashLoader, } from 'react-spinners';
+import { useForm } from "react-hook-form";
 
 const HomeItem = () => {
     const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
+    const [passCode, setPassCode] = useState('hafiz');
+    const { register, handleSubmit, reset } = useForm();
 
     // ----------------------react pagination functionality---------------------
     // We start with an empty list of items.
@@ -32,20 +34,42 @@ const HomeItem = () => {
 
         setItemOffset(newOffset);
     };
-    // console.log('darkmode', darkMode);
+
+    // handle password function
+    const onSubmit = data => {
+        console.log(data);
+        setPassCode(data.password);
+        reset();
+    }
 
 
 
 
     return (
         <>
+            {/* password input field */}
+            {
+                passCode === 'hafiz' ? (
+                    <div className="my-3">
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input style={{ color: '#767671' }} type='password' {...register("password")} placeholder='enter your password' />{' '}
+                            <input className='pass-submit-btn' type="submit" />
+                        </form>
+                    </div>
+                ) : ''
+            }
+
             <div style={darkMode?.mainBody} className='container my-3'>
-                <div className="container my-3">
-                    <h1>All Drive Folders</h1>
-                </div>
+                {
+                    passCode === '15152525' ? (
+                        <div className="container my-3">
+                            <h1>All Drive Folders</h1>
+                        </div>
+                    ) : ''
+                }
                 <div className="my-5">
                     <div className="row row-cols-1 row-cols-md-4 g-4">
-                        {control === true ? (
+                        {(control === true && (passCode === '15152525')) ? (
                             currentItems?.map(id => (
                                 <div key={id?._id} className="col">
                                     <div className="card h-100 folder-card">
@@ -69,11 +93,11 @@ const HomeItem = () => {
                                 </div>
                             ))
                         ) : (
-                            <div className="spiner_section">
-                                <div className="d-flex justify-content-center">
-                                    <div className="spinner-border" role="status">
-                                        <span className="visually-hidden">Loading...</span>
-                                    </div>
+                            <div style={{ width: '50%', margin: 'auto' }}>
+                                <marquee style={{ color: 'orangered', fontSize: '26px' }}>Please provide the correct password to Access the folders</marquee>
+                                {/* react loader */}
+                                <div className="spiner_section">
+                                    <HashLoader color='white' />
                                 </div>
                             </div>
                         )
@@ -81,21 +105,25 @@ const HomeItem = () => {
                     </div>
                 </div>
             </div>
-            <ReactPaginate
-                breakLabel="..."
-                nextLabel="⇾"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={3}
-                pageCount={pageCount}
-                previousLabel="⇽"
-                renderOnZeroPageCount={null}
-                containerClassName='pagination'
-                pageLinkClassName='menu'
-                previousLinkClassName='page-num'
-                nextLinkClassName='page-num'
-                activeLinkClassName='active'
-                pageClassName='page-style'
-            />
+            {
+                passCode === '15152525' ? (
+                    <ReactPaginate
+                        breakLabel="..."
+                        nextLabel="⇾"
+                        onPageChange={handlePageClick}
+                        pageRangeDisplayed={3}
+                        pageCount={pageCount}
+                        previousLabel="⇽"
+                        renderOnZeroPageCount={null}
+                        containerClassName='pagination'
+                        pageLinkClassName='menu'
+                        previousLinkClassName='page-num'
+                        nextLinkClassName='page-num'
+                        activeLinkClassName='active'
+                        pageClassName='page-style'
+                    />
+                ) : ''
+            }
         </>
     );
 };

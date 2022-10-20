@@ -99,6 +99,10 @@
 .btn-close {
   border: 1px solid #6e6e6e;
 }
+
+[data-rmiz-modal-overlay="visible"] {
+  background-color: #1b202c !important;
+}
 @media only screen and (max-width: 688px) {
   .img-fig {
     font-size: 10px;

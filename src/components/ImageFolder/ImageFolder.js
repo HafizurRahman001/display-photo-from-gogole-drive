@@ -5,6 +5,12 @@ import GetId from '../../useState/GetId';
 import './imageFolder.css';
 import LazyLoad from 'react-lazyload';
 
+
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+import ScrollToTop from 'react-scroll-to-top';
+import { HashLoader } from 'react-spinners';
+
 const ImageFolder = () => {
     const [imageId, setImageId, control, setControl, darkMode, setDarkMode] = GetId();
     const [imgIdToModal, setImgIdToModal] = useState('');
@@ -16,10 +22,6 @@ const ImageFolder = () => {
     filterImg?.map(e => {
         return idArr.push(e?.idList)
     });
-
-    console.log(
-        'test', darkMode
-    );
 
 
 
@@ -52,8 +54,11 @@ const ImageFolder = () => {
         if (slicedItem !== undefined) {
             setCurrentItems(slicedItem);
         }
+        console.log('test', slicedItem);
+
         setPageCount(Math.ceil(integerPageNumber));
     }, [itemOffset, itemsPerPage, imageId]);
+
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
@@ -68,33 +73,37 @@ const ImageFolder = () => {
     return (
         <>
             <div className="container my-5">
+                <ScrollToTop smooth color='#1B202C' />
                 <h3 className='image-item-heading mb-4'>{filterImg[0]?.folderName}</h3>
                 <div className="row row-cols-2 row-cols-md-5 g-3">
 
                     {
                         control === true ? (
-                            currentItems[0]?.map((id, index) => (
+                            currentItems[0]?.map((id, index, arr) => (
                                 <div className="list">
                                     <LazyLoad height={200} once>
                                         <div className='col' key={id}>
                                             <div className="img-item">
-                                                <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
-                                                <div className="icon-div">
+                                                {/* --> image zoom on click --> */}
+                                                <Zoom>
+                                                    <img className='img-thumbnail img-responsive style-img' src={`https://drive.google.com/uc?id=${id}`} alt="" />
+                                                </Zoom>
+
+                                                {/* --> click and open image on a modal --> */}
+                                                {/* <div className="icon-div">
                                                     <i data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setImgIdToModal(id)} className="bi bi-arrows-fullscreen fullscreen-arrow"></i>
-                                                </div>
+                                                </div> */}
                                             </div>
-                                            <figcaption className='img-fig'>hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com</figcaption>
+                                            <figcaption className='img-fig'>
+                                                hafizurrahmanbu{filterImg?.map(e => e?.driveName)}@gmail.com
+                                            </figcaption>
                                         </div>
                                     </LazyLoad>
                                 </div>
                             ))
                         ) : (
                             <div className="spiner_section">
-                                <div className="d-flex justify-content-center">
-                                    <div className="spinner-border" role="status">
-                                        <span className="visually-hidden">Loading...</span>
-                                    </div>
-                                </div>
+                                <HashLoader color='white' />
                             </div>
 
                         )
